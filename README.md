@@ -307,7 +307,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para:
 - 🔧 Enviar pull requests
 - ⭐ Dar uma estrela no projeto
 
-**⭐ Se este projeto foi útil para você, deixe uma estrela! Isso ajuda muito.Agradeço desde já! ⭐**
+**⭐ Se este projeto foi útil para você, deixe uma estrela! Isso ajuda muito. Agradeço desde já! ⭐**
 
 ---
 
