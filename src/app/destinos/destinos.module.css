@@ -1,0 +1,66 @@
+.destinos__page {
+  min-height: 100vh;
+}
+
+.destinos__hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.destinos__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.destinos__title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.destinos__subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.destinos__section {
+  padding: 4rem 0;
+  background: #f8f9fa;
+}
+
+.destinos__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .destinos__title {
+    font-size: 2.2rem;
+  }
+
+  .destinos__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .destinos__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .destinos__hero {
+    padding: 3rem 0;
+  }
+
+  .destinos__section {
+    padding: 3rem 0;
+  }
+}

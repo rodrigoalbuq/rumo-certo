@@ -1,0 +1,10 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#3498db"/>
+<circle cx="350" cy="50" r="30" fill="#f1c40f"/>
+<path d="M0 200 Q100 180 200 190 T400 200 V300 H0 Z" fill="#2ecc71"/>
+<rect x="50" y="100" width="80" height="120" fill="#95a5a6"/>
+<rect x="55" y="105" width="70" height="80" fill="#ecf0f1"/>
+<rect x="75" y="125" width="30" height="40" fill="#3498db"/>
+<rect x="55" y="185" width="20" height="35" fill="#8b4513"/>
+<text x="200" y="250" text-anchor="middle" fill="white" font-family="Arial" font-size="24" font-weight="bold">Rio de Janeiro</text>
+</svg>

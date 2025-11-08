@@ -1,0 +1,173 @@
+/* Block: card */
+.card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modifier: card--hover */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Element: card__image-container */
+.card__imageContainer {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+/* Element: card__image */
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.3s ease;
+  border-radius: 0;
+}
+
+/* Specific styling for SVG images */
+.card__image[src$=".svg"] {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 0.5rem;
+}
+
+/* Modifier: card__image--hover */
+.card:hover .card__image {
+  transform: scale(1.05);
+}
+
+/* Element: card__overlay */
+.card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Modifier: card__overlay--visible */
+.card:hover .card__overlay {
+  opacity: 1;
+}
+
+/* Element: card__view-button */
+.card__viewButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+}
+
+/* Modifier: card__view-button--hover */
+.card:hover .card__viewButton {
+  transform: translateY(0);
+}
+
+.card__viewButton:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: scale(1.05);
+}
+
+/* Element: card__content */
+.card__content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Element: card__title */
+.card__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+/* Element: card__location */
+.card__location {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* Element: card__description */
+.card__description {
+  color: #34495e;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Element: card__footer */
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-top: 1px solid #ecf0f1;
+  padding-top: 1rem;
+}
+
+/* Element: card__price */
+.card__price {
+  font-weight: 700;
+  color: #27ae60;
+  font-size: 1.1rem;
+}
+
+/* Element: card__season */
+.card__season {
+  color: #8e44ad;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .card__imageContainer {
+    height: 200px;
+  }
+  
+  .card__content {
+    padding: 1rem;
+  }
+  
+  .card__title {
+    font-size: 1.2rem;
+  }
+  
+  .card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

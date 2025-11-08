@@ -1,0 +1,16 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#34495e"/>
+<rect x="50" y="80" width="60" height="180" fill="#95a5a6"/>
+<rect x="150" y="60" width="70" height="200" fill="#7f8c8d"/>
+<rect x="260" y="40" width="80" height="220" fill="#bdc3c7"/>
+<rect x="55" y="85" width="10" height="15" fill="#f1c40f"/>
+<rect x="70" y="100" width="10" height="15" fill="#f1c40f"/>
+<rect x="85" y="90" width="10" height="15" fill="#f1c40f"/>
+<rect x="155" y="70" width="12" height="18" fill="#f1c40f"/>
+<rect x="175" y="85" width="12" height="18" fill="#f1c40f"/>
+<rect x="195" y="75" width="12" height="18" fill="#f1c40f"/>
+<rect x="265" y="50" width="15" height="20" fill="#f1c40f"/>
+<rect x="290" y="65" width="15" height="20" fill="#f1c40f"/>
+<rect x="315" y="55" width="15" height="20" fill="#f1c40f"/>
+<text x="200" y="280" text-anchor="middle" fill="white" font-family="Arial" font-size="24" font-weight="bold">São Paulo</text>
+</svg>

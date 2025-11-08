@@ -1,66 +1,57 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import styles from "@/app/home.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className={styles.home__page}>
+      <section className={styles.home__hero}>
+        <div className={styles.home__heroContent}>
+          <h1 className={styles.home__heroTitle}>
+            Descubra o Brasil com
+            <span className={styles.home__highlight}> Rumo Certo</span>
+          </h1>
+          <p className={styles.home__heroDescription}>
+            Explore os destinos mais incríveis do nosso país com Rumo Certo, seu maior portal de viagens. De praias paradisíacas
+            a cidades históricas, encontre sua próxima aventura agora mesmo!
           </p>
+          <Link href="/destinos" className={styles.home__ctaButton}>
+            Explorar Destinos
+          </Link>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className={styles.home__features}>
+        <div className={styles.home__container}>
+          <h2 className={styles.home__sectionTitle}>Por que escolher o Rumo Certo?</h2>
+          <div className={styles.home__featuresGrid}>
+            <div className={styles.home__feature}>
+              <div className={styles.home__featureIcon}>🗺️</div>
+              <h3>Destinos Exclusivos</h3>
+              <p>Descobra lugares únicos e experiências autênticas em todo o Brasil</p>
+            </div>
+            <div className={styles.home__feature}>
+              <div className={styles.home__featureIcon}>💰</div>
+              <h3>Melhores Preços</h3>
+              <p>Ofertas especiais e preços competitivos para sua viagem dos sonhos</p>
+            </div>
+            <div className={styles.home__feature}>
+              <div className={styles.home__featureIcon}>🎯</div>
+              <h3>Planejamento Fácil</h3>
+              <p>Informações detalhadas para planejar sua viagem com confiança</p>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      <section className={styles.home__cta}>
+        <div className={styles.home__container}>
+          <h2>Pronto para a aventura?</h2>
+          <p>Comece a planejar sua próxima viagem agora mesmo</p>
+          <Link href="/destinos" className={styles.home__ctaButton}>
+            Ver Todos os Destinos
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,0 +1,243 @@
+/* Block: destino-detalhes */
+.destinoDetalhes {
+  min-height: 100vh;
+}
+
+/* Element: destino-detalhes__hero */
+.destinoDetalhes__hero {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+}
+
+/* Element: destino-detalhes__hero-image */
+.destinoDetalhes__heroImage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Element: destino-detalhes__image */
+.destinoDetalhes__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Element: destino-detalhes__hero-overlay */
+.destinoDetalhes__heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.7) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem 0;
+}
+
+/* Element: destino-detalhes__hero-content */
+.destinoDetalhes__heroContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  color: white;
+}
+
+/* Element: destino-detalhes__hero-title */
+.destinoDetalhes__heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Element: destino-detalhes__hero-location */
+.destinoDetalhes__heroLocation {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* Element: destino-detalhes__content */
+.destinoDetalhes__content {
+  padding: 4rem 0;
+  background: #f8f9fa;
+}
+
+/* Element: destino-detalhes__container */
+.destinoDetalhes__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Element: destino-detalhes__grid */
+.destinoDetalhes__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Element: destino-detalhes__main-content */
+.destinoDetalhes__mainContent {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Element: destino-detalhes__section-title */
+.destinoDetalhes__sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+/* Element: destino-detalhes__description */
+.destinoDetalhes__description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #34495e;
+  margin-bottom: 2rem;
+}
+
+.destinoDetalhes__highlights {
+  margin-top: 2rem;
+}
+
+.destinoDetalhes__highlights h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.destinoDetalhes__highlights ul {
+  list-style: none;
+  padding: 0;
+}
+
+.destinoDetalhes__highlights li {
+  padding: 0.5rem 0;
+  color: #34495e;
+  font-size: 1.05rem;
+}
+
+.destinoDetalhes__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.destinoDetalhes__infoCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.destinoDetalhes__infoCard h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.destinoDetalhes__infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.destinoDetalhes__infoLabel {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.destinoDetalhes__infoValue {
+  font-size: 1rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.destinoDetalhes__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.destinoDetalhes__bookButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.destinoDetalhes__bookButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.destinoDetalhes__backButton {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.destinoDetalhes__backButton:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .destinoDetalhes__heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .destinoDetalhes__heroLocation {
+    font-size: 1.1rem;
+  }
+
+  .destinoDetalhes__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .destinoDetalhes__mainContent,
+  .destinoDetalhes__infoCard {
+    padding: 1.5rem;
+  }
+
+  .destinoDetalhes__hero {
+    height: 50vh;
+  }
+
+  .destinoDetalhes__heroOverlay {
+    padding: 2rem 0;
+  }
+
+  .destinoDetalhes__content {
+    padding: 3rem 0;
+  }
+}
