@@ -1,6 +1,24 @@
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111827; /* gray-900 for stronger contrast */
+  --text-primary: #111827; /* gray-900 */
+  --text-secondary: #374151; /* gray-700 for AA contrast */
+
+  /* Surfaces */
+  --surface-bg: #f8fafc; /* slightly brighter for contrast */
+  --surface-card-bg: #ffffff;
+  --surface-border: #d1d5db; /* gray-300 for clearer delineation */
+  --surface-border-strong: #6b7280; /* gray-500 ensures 3:1 against white */
+
+  /* Links */
+  --link-color: #1d4ed8; /* blue-700 high contrast on white */
+  --link-hover-color: #1e40af; /* blue-800 */
+
+  /* Brand gradients */
+  --gradient-primary-start: #667eea; /* indigo-400 */
+  --gradient-primary-end: #5b21b6;   /* purple-800 for better white contrast */
+  --hero-gradient-start: #eef2ff;    /* indigo-50 */
+  --hero-gradient-end: #c7d2fe;      /* indigo-200 */
 }
 
 * {
@@ -37,9 +55,11 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--link-color);
   text-decoration: none;
 }
+
+a:hover { color: var(--link-hover-color); }
 
 /* Utility classes */
 .container {
@@ -71,4 +91,26 @@ a {
   .section {
     padding: 2rem 0;
   }
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="dark"] body {
+  --background: #0b0f1a; /* darker for stronger contrast */
+  --foreground: #f1f5f9; /* slate-100 */
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1; /* slate-300 for AA on dark */
+  --surface-bg: #0b0f1a;
+  --surface-card-bg: #111827;
+  --surface-border: #374151; /* gray-700 for visibility on dark */
+  --surface-border-strong: #94a3b8; /* slate-400 visible on dark backgrounds */
+  --link-color: #93c5fd; /* blue-300 readable on dark */
+  --link-hover-color: #bfdbfe; /* blue-200 */
+  --gradient-primary-start: #3f51b5; /* indigo-600 adjusted */
+  --gradient-primary-end: #4c1d95;   /* purple-900 */
+  --hero-gradient-start: #1f2937;
+  --hero-gradient-end: #0f172a;
 }

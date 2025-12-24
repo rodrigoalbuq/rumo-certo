@@ -1,13 +1,15 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { destinos } from '@/data/destinos';
 import { DestinoDetalhesProps } from '@/types';
 import styles from './destinoDetalhes.module.css';
 
+
 export async function generateMetadata({ params }: DestinoDetalhesProps): Promise<Metadata> {
-  const destino = destinos.find(d => d.id === parseInt(params.id));
+  const { id } = await params;
+  const destino = destinos.find(d => d.id === parseInt(id));
 
   if (!destino) {
     return {
@@ -21,8 +23,9 @@ export async function generateMetadata({ params }: DestinoDetalhesProps): Promis
   };
 }
 
-export default function DestinoDetalhes({ params }: DestinoDetalhesProps) {
-  const destino = destinos.find(d => d.id === parseInt(params.id));
+export default async function DestinoDetalhes({ params }: DestinoDetalhesProps) {
+  const { id } = await params;
+  const destino = destinos.find(d => d.id === parseInt(id));
 
   if (!destino) {
     notFound();
@@ -88,9 +91,7 @@ export default function DestinoDetalhes({ params }: DestinoDetalhesProps) {
                 <button className={styles.destinoDetalhes__bookButton}>
                   Reservar Agora
                 </button>
-                <Link href="/destinos" className={styles.destinoDetalhes__backButton}>
-                  Voltar aos Destinos
-                </Link>
+                <Link href="/destinos" className={styles.destinoDetalhes__backButton}>Voltar aos Destinos</Link>
               </div>
             </div>
           </div>

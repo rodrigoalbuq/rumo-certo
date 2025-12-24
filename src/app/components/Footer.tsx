@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -14,10 +15,10 @@ export default function Footer() {
                         <h4 className={styles.footer__subtitle}>Links Úteis</h4>
                         <ul className={styles.footer__list}>
                             <li className={styles.footer__listItem}>
-                                <a href="/" className={styles.footer__link}>Início</a>
+                                <Link href="/" className={styles.footer__link}>Início</Link>
                             </li>
                             <li className={styles.footer__listItem}>
-                                <a href="/destinos" className={styles.footer__link}>Destinos</a>
+                                <Link href="/destinos" className={styles.footer__link}>Destinos</Link>
                             </li>
                         </ul>
                     </div>

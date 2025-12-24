@@ -3,7 +3,7 @@
 }
 
 .home__hero {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
   padding: 4rem 0;
   display: flex;
   align-items: center;
@@ -20,9 +20,10 @@
 .home__heroTitle {
   font-size: 3rem;
   font-weight: 800;
-  color: #2c3e50;
+  color: var(--text-primary);
   line-height: 1.2;
   margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 .home__highlight {
@@ -34,14 +35,14 @@
 
 .home__heroDescription {
   font-size: 1.2rem;
-  color: #34495e;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 2rem;
 }
 
 .home__ctaButton {
   display: inline-block;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--gradient-primary-start) 0%, var(--gradient-primary-end) 100%);
   color: white;
   padding: 1rem 2rem;
   border-radius: 50px;
@@ -52,9 +53,15 @@
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
-.home__ctaButton:hover {
+a.home__ctaButton:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+  color: #ffffff;
+}
+
+.home__ctaButton:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 3px;
 }
 
 .home__features {
@@ -72,7 +79,7 @@
   text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #2c3e50;
+  color: var(--text-primary);
   margin-bottom: 3rem;
 }
 
@@ -86,7 +93,7 @@
   text-align: center;
   padding: 2rem;
   border-radius: 16px;
-  background: #f8f9fa;
+  background: var(--surface-bg);
   transition: transform 0.3s ease;
 }
 
@@ -103,43 +110,117 @@
 .home__feature h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: var(--text-primary);
   margin-bottom: 1rem;
 }
 
 .home__feature p {
-  color: #34495e;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
 .home__cta {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--gradient-primary-start) 0%, var(--gradient-primary-end) 100%);
   color: white;
   padding: 4rem 0;
   text-align: center;
+  position: relative;
 }
 
 .home__cta h2 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 .home__cta p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  opacity: 0.9;
 }
 
 .home__cta .home__ctaButton {
   background: white;
-  color: #667eea;
+  color: var(--link-color);
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 .home__cta .home__ctaButton:hover {
   background: #f8f9fa;
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+  color: var(--link-color);
+}
+
+/* Dark theme: improve CTA button contrast on gradient */
+:global([data-theme="dark"]) .home__cta .home__ctaButton {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  box-shadow: none;
+}
+
+:global([data-theme="dark"]) .home__cta .home__ctaButton:hover {
+  background: #ffffff;
+  color: #111827; /* high contrast text on white */
+}
+
+/* Light theme only: darken CTA gradient for better text contrast */
+:global(:root:not([data-theme="dark"])) .home__cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+/* Light theme only: ensure full opacity for legible paragraph text on gradient */
+:global(:root:not([data-theme="dark"])) .home__cta p {
+  opacity: 1;
+}
+
+/* Dark theme: raise text and surface contrast across sections */
+:global([data-theme="dark"]) .home__heroTitle {
+  color: #ffffff;
+}
+
+:global([data-theme="dark"]) .home__heroDescription {
+  color: #e5e7eb; /* higher contrast on dark backgrounds */
+}
+
+:global([data-theme="dark"]) .home__sectionTitle {
+  color: #ffffff;
+}
+
+/* Ensure gradient highlight text remains readable on dark */
+:global([data-theme="dark"]) .home__highlight {
+  background: linear-gradient(135deg, #93c5fd 0%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Avoid bright section background in dark mode */
+:global([data-theme="dark"]) .home__features {
+  background: transparent;
+}
+
+/* Card contrast and readable text in dark mode */
+:global([data-theme="dark"]) .home__feature {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+:global([data-theme="dark"]) .home__feature h3 {
+  color: #f9fafb;
+}
+
+:global([data-theme="dark"]) .home__feature p {
+  color: #d1d5db;
+}
+
+/* Focus ring must stay visible in dark */
+:global([data-theme="dark"]) .home__ctaButton:focus-visible {
+  outline-color: #ffffff;
 }
 
 @media (max-width: 768px) {

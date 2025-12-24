@@ -1,9 +1,10 @@
 /* Block: card */
 .card {
-  background: white;
+  background: var(--surface-card-bg);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--surface-border-strong);
   transition: all 0.3s ease;
   height: 100%;
   display: flex;
@@ -68,7 +69,7 @@
 
 /* Element: card__view-button */
 .card__viewButton {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--gradient-primary-start) 0%, var(--gradient-primary-end) 100%);
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
@@ -107,7 +108,7 @@
 
 /* Element: card__location */
 .card__location {
-  color: #7f8c8d;
+  color: var(--text-secondary);
   font-size: 0.9rem;
   margin-bottom: 1rem;
   font-weight: 500;
@@ -129,14 +130,14 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  border-top: 1px solid #ecf0f1;
+  border-top: 1px solid var(--surface-border);
   padding-top: 1rem;
 }
 
 /* Element: card__price */
 .card__price {
   font-weight: 700;
-  color: #27ae60;
+  color: #166534;
   font-size: 1.1rem;
 }
 
@@ -170,4 +171,45 @@
     align-items: flex-start;
     gap: 0.5rem;
   }
+
+  /* Tornar o botão "Ver Detalhes" sempre visível em dispositivos móveis */
+  .card__overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Dark theme: improve text contrast inside cards */
+:global([data-theme="dark"]) .card__title {
+  color: #f9fafb;
+}
+
+:global([data-theme="dark"]) .card__location {
+  color: #cbd5e1;
+}
+
+:global([data-theme="dark"]) .card__description {
+  color: #d1d5db;
+}
+
+:global([data-theme="dark"]) .card__price {
+  color: #34d399; /* brighter green for dark */
+}
+
+:global([data-theme="dark"]) .card__season {
+  color: #c084fc; /* lighter purple for dark */
+}
+
+:global([data-theme="dark"]) .card__imageContainer {
+  background: #0f172a;
+}
+
+:global([data-theme="dark"]) .card__image[src$=".svg"] {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+}
+
+/* Ensure focus is clearly visible in dark */
+:global([data-theme="dark"]) .card__viewButton:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
 }

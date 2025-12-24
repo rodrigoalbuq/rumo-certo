@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
-import { destinos } from '@/data/destinos';
-import CardDestino from '@/app/components/CardDestino';
 import styles from './destinos.module.css';
+import DestinosGrid from '@/app/destinos/DestinosGrid';
 
 export const metadata: Metadata = {
     title: 'Destinos - Rumo Certo',
     description: 'Explore os melhores destinos turísticos do Brasil. Encontre sua próxima aventura!',
 };
+
 
 export default function Destinos() {
     return (
@@ -20,15 +20,7 @@ export default function Destinos() {
                 </div>
             </section>
 
-            <section className={styles.destinos__section}>
-                <div className={styles.destinos__container}>
-                    <div className={styles.destinos__grid}>
-                        {destinos.map((destino) => (
-                            <CardDestino key={destino.id} destino={destino} />
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <DestinosGrid />
         </div>
     );
 }

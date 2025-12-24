@@ -12,8 +12,9 @@ export interface Destino {
 
 export interface CardDestinoProps {
     destino: Destino;
+    priority?: boolean;
 }
 
 export interface DestinoDetalhesProps {
-    params: { id: string };
+    params: Promise<{ id: string }>;
 }

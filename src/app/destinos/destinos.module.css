@@ -3,7 +3,7 @@
 }
 
 .destinos__hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--gradient-primary-start) 0%, var(--gradient-primary-end) 100%);
   color: white;
   padding: 4rem 0;
   text-align: center;
@@ -31,15 +31,11 @@
 }
 
 .destinos__section {
-  padding: 4rem 0;
-  background: #f8f9fa;
+  /* moved to DestinosGrid.module.css */
 }
 
 .destinos__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  /* moved to DestinosGrid.module.css */
 }
 
 @media (max-width: 768px) {
@@ -51,16 +47,7 @@
     font-size: 1.1rem;
   }
 
-  .destinos__grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
   .destinos__hero {
-    padding: 3rem 0;
-  }
-
-  .destinos__section {
     padding: 3rem 0;
   }
 }

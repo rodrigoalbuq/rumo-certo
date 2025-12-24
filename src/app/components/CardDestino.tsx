@@ -1,9 +1,9 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import { CardDestinoProps } from '@/types';
 import styles from './CardDestino.module.css';
 
-export default function CardDestino({ destino }: CardDestinoProps) {
+export default function CardDestino({ destino, priority }: CardDestinoProps) {
   return (
     <div className={styles.card}>
       <div className={styles.card__imageContainer}>
@@ -13,11 +13,10 @@ export default function CardDestino({ destino }: CardDestinoProps) {
           width={400}
           height={300}
           className={styles.card__image}
+          priority={!!priority}
         />
         <div className={styles.card__overlay}>
-          <Link href={`/destinos/${destino.id}`} className={styles.card__viewButton}>
-            Ver Detalhes
-          </Link>
+          <Link href={`/destinos/${destino.id}`} className={styles.card__viewButton}>Ver Detalhes</Link>
         </div>
       </div>
 
