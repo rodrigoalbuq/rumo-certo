@@ -1,7 +1,9 @@
+"use client";
 import Link from 'next/link';
 import styles from './Footer.module.css';
 
 export default function Footer() {
+    const year = new Date().getFullYear();
     return (
         <footer className={styles.footer}>
             <div className={styles.footer__container}>
@@ -31,7 +33,7 @@ export default function Footer() {
                 </div>
 
                 <div className={styles.footer__bottom}>
-                    <p className={styles.footer__copyright}>&copy; 2025 Rumo Certo | Desenvolvido por <a href="https://github.com/rodrigoalbuq" className={styles.footer__link}>Rodrigo Albuquerque</a>. | Todos os direitos reservados.</p>
+                    <p className={styles.footer__copyright}>&copy; {year} Rumo Certo | Desenvolvido por <a href="https://github.com/rodrigoalbuq" className={styles.footer__link}>Rodrigo Albuquerque</a>. | Todos os direitos reservados.</p>
                 </div>
             </div>
         </footer>
